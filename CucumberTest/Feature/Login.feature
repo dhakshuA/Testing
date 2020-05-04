@@ -24,13 +24,17 @@ When the user should get the size and contiune to shipping
 Then the user should click on the statndard button and contiue to payment
 And the user should select quick pay and same as shipping Address and complete order
 
-Scenario: 
+Scenario: Card Details
 Given The user should enter the card number
-|4211 3456 7654 5678 |
-
+|4233 467 7654 4323|
 When The user should enter Expiry date
 |05|
-|2022|
-And the user should enter the CVV
+|2020|
+Then the user should enter the CVV
 |222|
-Then click on pay
+And click on pay
+
+
+
+
+

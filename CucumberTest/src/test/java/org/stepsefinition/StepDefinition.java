@@ -146,33 +146,53 @@ public class StepDefinition  extends Baseclass{
 		sp.getSameshipping();
 		Thread.sleep(2000);
 		click(sp.getCompleteorder());
+	driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		
 	}
+
 	@Given("The user should enter the card number")
-	public void The_user_should_enter_the_card_number(DataTable data) throws Exception {
-		List<String> li = data.asList();
-		driver.manage().timeouts().implicitlyWait(300, TimeUnit.SECONDS);
-		CardDetails cd = new CardDetails();
-		input(cd.getcardnumber(),li.get(0) );
-		input(cd.getcvv(),li.get(0));
-		Thread.sleep(3000);
-		click(cd.getpay());
+	public void the_user_should_enter_the_card_number(DataTable data) {
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		List<String >li = data.asList();
+
+		CardDetails cd =new CardDetails();
+		input(cd.getcardnumber(),li.get(0));
 		
 	}
-	
+
 	@When("The user should enter Expiry date")
-	public void When_The_user_should_enter_Expiry_date() {
-		System.out.println(" entered the details");
-	}
-	
-	@And("the user should enter the CVV")
-	public void the_user_should_enter_the_CVV() {
+	public void the_user_should_enter_Expiry_date(DataTable data) {
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		List<String >li = data.asList();
 		
-		System.out.println(" entered the details");
+		CardDetails cd =new CardDetails();
+		input(cd.getexpirymonth(), li.get(0));
+		input(cd.getexpiryyear(), li.get(0));
 	}
 
-	@Then ("click on pay")
+	@When("the user should enter the CVV")
+	public void the_user_should_enter_the_CVV(DataTable data) {
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		List<String >li = data.asList();
+		CardDetails cd =new CardDetails();
+		input(cd.getcvv(), li.get(0)); 
+		
+	
+	}
+
+	@Then("click on pay")
 	public void click_on_pay() {
-	driver.quit();	
+		driver.quit();
+		
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+		
 }
