@@ -24,8 +24,8 @@ public class Baseclass {
 	
 	
 	public static void loadchromebrowser()  {
-			System.setProperty("webdriver.chrome.driver","C:\\Users\\Sate\\eclipse-workspace\\CucumberTest\\Driver\\chromedriver.exe");
-			 driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Sate\\eclipse-workspace\\Automation\\Driver\\chromedriver.exe");
+		driver = new ChromeDriver();
 			
 }
 
